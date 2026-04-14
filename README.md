@@ -1,4 +1,4 @@
-# RBTRANS-CREDENCIAL[site.txt](https://github.com/user-attachments/files/26719320/site.txt)
+[sitecompleto.txt](https://github.com/user-attachments/files/26719561/sitecompleto.txt)
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -64,15 +64,44 @@
     <div class="card">
         <h2>CREDENCIAL DE TRANSPORTE</h2>
         
-        <div class="photo">
+        <div class="photo" id="photo">
             Foto 3x4
         </div>
         
-        <div class="info"><strong>Nome:</strong> Francisco Pereira de Rocha</div>
-        <div class="info"><strong>CPF:</strong> 018.546.987-91</div>
-        <div class="info"><strong>Placa:</strong> NZR9A58</div>
-        <div class="info"><strong>Situação Cadastral:</strong> Regular</div>
-        <div class="info"><strong>Data de Validade:</strong> 30/09/2027</div>
+        <div class="info"><strong>Nome:</strong> <span id="nome"></span></div>
+        <div class="info"><strong>CPF:</strong> <span id="cpf"></span></div>
+        <div class="info"><strong>Placa:</strong> <span id="placa"></span></div>
+        <div class="info"><strong>Situação Cadastral:</strong> <span id="situacao"></span></div>
+        <div class="info"><strong>Data de Validade:</strong> <span id="validade"></span></div>
     </div>
+
+    <script>
+        // Dados da credencial
+        const credencial = {
+            nome: "Francisco Pereira de Rocha",
+            cpf: "018.546.987-91",
+            placa: "NZR9A58",
+            situacao: "Regular",
+            validade: "30/09/2027",
+            foto: "https://via.placeholder.com/100x130" // substitua pelo link da foto real
+        };
+
+        // Preenche os campos automaticamente
+        document.getElementById("nome").textContent = credencial.nome;
+        document.getElementById("cpf").textContent = credencial.cpf;
+        document.getElementById("placa").textContent = credencial.placa;
+        document.getElementById("situacao").textContent = credencial.situacao;
+        document.getElementById("validade").textContent = credencial.validade;
+
+        // Adiciona a foto dinamicamente
+        const fotoDiv = document.getElementById("photo");
+        const img = document.createElement("img");
+        img.src = credencial.foto;
+        img.alt = "Foto do usuário";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        fotoDiv.innerHTML = "";
+        fotoDiv.appendChild(img);
+    </script>
 </body>
 </html>
